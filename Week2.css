@@ -1,0 +1,103 @@
+/* .one {
+    
+    color: red;
+    border-bottom: 3px solid red;
+}
+.two {
+
+    color: green;
+    border-bottom: 3px solid green;
+}
+.three {
+    
+    color: blue;
+    border-bottom: 3px solid blue;
+}
+.four {
+    
+    color: violet;
+    border-bottom: 3px solid violet;
+}
+.one,
+.two,
+.three,
+.four,
+.p1,
+.p2 {
+
+    padding: 10px;
+    margin: 12px;
+    background-color: #eee;
+} */
+
+/* div .spacial {
+    color: rgb(255, 0, 0);
+} */
+
+/* div {
+    background-color: rgb(199 176 220);
+    width: 400px;
+    min-width: 200px;
+    max-width: 400px;
+    min-height: 20px;
+    max-height: 100px;
+    width:fit-content;
+}  */
+
+/* div {
+
+
+    background-color: #eee;
+    margin: 20px auto;
+    color: rgb(101, 30, 55);
+    width: 200px;
+    height: 200px;
+    overflow: auto;
+    overflow-y: auto;
+    overflow-x: auto;
+} */
+
+/* .Div1 {
+    background-color: #eee;
+    text-align: center;
+    text-transform:uppercase ;    
+    /* color:coral; */
+    /* text-shadow: 2px 2px 1px rgb(155, 22, 122);
+    text-align: center; 
+} */
+/* a {
+    background-color: rgb(32, 120, 32);
+    color: white;
+    text-decoration: none;
+    padding: 10px 5px;
+    margin: auto;
+    border-radius: 3px;
+    display: inline-block;
+} */
+/* div {
+    text-align: center;
+}
+img {
+        vertical-align: middle;
+
+}
+
+p {
+    background-color: #eee;
+    direction:rtl;
+    text-align: right;
+} */
+
+/* div {
+    background-color: #eee;
+    width: 200px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    white-space: nowrap;
+    line-height: 1.6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+div:hover {
+    overflow:visible ;
+} */

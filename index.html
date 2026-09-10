@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moamen Elbadry | Full Stack .NET Developer & CS Student</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dotnet: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            500: '#6366f1',
+                            600: '#512bd4',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#1e1b4b',
+                        },
+                        techCyan: '#06b6d4',
+                        techDark: '#0b0f19',
+                        techCard: '#111827',
+                        techBorder: '#1f2937'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome & Lucide Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', 'Tajawal', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        .glow-purple {
+            box-shadow: 0 0 50px -10px rgba(81, 43, 212, 0.4);
+        }
+
+        .glow-cyan {
+            box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.3);
+        }
+
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #a78bfa 0%, #512bd4 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-border {
+            position: relative;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, #512bd4, #06b6d4);
+            padding: 1px;
+        }
+
+        .gradient-border-inner {
+            background: #111827;
+            border-radius: calc(1rem - 1px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #512bd4;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-techDark text-gray-100 min-h-screen flex flex-col selection:bg-dotnet-600 selection:text-white transition-colors duration-300">
+
+    <!-- Background Grid & Glowing Orbs -->
+    <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+        <!-- Glowing background elements -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-dotnet-600/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-techCyan/10 rounded-full blur-3xl animate-pulse"
+            style="animation-delay: 2s;"></div>
+
+        <!-- Code/Grid Pattern Overlay -->
+        <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#1f293710_1px,transparent_1px),linear-gradient(to_bottom,#1f293710_1px,transparent_1px)] bg-[size:4rem_4rem]">
+        </div>
+    </div>
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card border-b border-gray-800/80"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-tr from-dotnet-600 to-techCyan flex items-center justify-center text-white font-extrabold text-lg shadow-lg group-hover:scale-105 transition-transform">
+                    M
+                </div>
+                <div>
+                    <span
+                        class="text-xl font-bold tracking-tight text-white group-hover:text-dotnet-500 transition-colors">Moamen<span
+                            class="text-techCyan">.NET</span></span>
+                    <span class="block text-[10px] text-gray-400 tracking-wider font-mono uppercase"
+                        data-en="Full Stack Developer" data-ar="مطور دوت نت متكامل">Full Stack Developer</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                <a href="#about"
+                    class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/60 rounded-lg transition-all"
+                    data-en="About" data-ar="من أنا">About</a>
+                <a href="#skills"
+                    class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/60 rounded-lg transition-all"
+                    data-en="Skills" data-ar="المهارات">Skills</a>
+                <a href="#experience"
+                    class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/60 rounded-lg transition-all"
+                    data-en="Experience" data-ar="الخبرات">Experience</a>
+                <a href="#education"
+                    class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/60 rounded-lg transition-all"
+                    data-en="Education" data-ar="التعليم">Education</a>
+                <a href="#problem-solving"
+                    class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/60 rounded-lg transition-all"
+                    data-en="Codeforces" data-ar="حل المشكلات">Codeforces</a>
+                <a href="#projects"
+                    class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/60 rounded-lg transition-all"
+                    data-en="Projects" data-ar="المشاريع">Projects</a>
+                <a href="#contact"
+                    class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/60 rounded-lg transition-all"
+                    data-en="Contact" data-ar="التواصل">Contact</a>
+            </nav>
+
+            <!-- Actions Right -->
+            <div class="flex items-center gap-3">
+                <!-- Language Toggle -->
+                <button id="langToggleBtn" onclick="toggleLanguage()"
+                    class="px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-gray-700 text-xs font-mono text-gray-200 border border-gray-700 transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-globe text-techCyan"></i>
+                    <span id="langText">العربية</span>
+                </button>
+
+
+
+                <!-- Hire Me Quick Action Button -->
+                <a href="#contact"
+                    class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-dotnet-600 to-indigo-600 hover:from-dotnet-700 hover:to-indigo-700 rounded-lg shadow-lg shadow-dotnet-600/30 transition-all hover:-translate-y-0.5">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span data-en="Hire Me" data-ar="تواصل معي">Hire Me</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()"
+                    class="md:hidden p-2 rounded-lg bg-gray-800 text-gray-300 hover:text-white">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-techCard/95 border-b border-gray-800 px-4 pt-2 pb-6 space-y-2">
+            <a href="#about" onclick="toggleMobileMenu()"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+                data-en="About" data-ar="من أنا">About</a>
+            <a href="#skills" onclick="toggleMobileMenu()"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+                data-en="Skills" data-ar="المهارات">Skills</a>
+            <a href="#experience" onclick="toggleMobileMenu()"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+                data-en="Experience" data-ar="الخبرات">Experience</a>
+            <a href="#education" onclick="toggleMobileMenu()"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+                data-en="Education" data-ar="التعليم">Education</a>
+            <a href="#problem-solving" onclick="toggleMobileMenu()"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+                data-en="Codeforces" data-ar="حل المشكلات">Codeforces</a>
+            <a href="#projects" onclick="toggleMobileMenu()"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+                data-en="Projects" data-ar="المشاريع">Projects</a>
+            <a href="#contact" onclick="toggleMobileMenu()"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
+                data-en="Contact" data-ar="التواصل">Contact</a>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+
+        <!-- HERO SECTION -->
+        <section id="hero"
+            class="relative min-h-[90vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 bg-grid-pattern overflow-hidden">
+
+            <!-- Background Tech Elements & Floating Icons -->
+            <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none">
+                <!-- Glowing Orbs -->
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-dotnet-600/20 rounded-full blur-3xl animate-pulse">
+                </div>
+                <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-techCyan/20 rounded-full blur-3xl animate-pulse"
+                    style="animation-delay: 2s;"></div>
+
+                <!-- Floating Tech Badges / Code Snippets -->
+                <div class="absolute top-12 left-[8%] animate-float text-dotnet-500/30 font-mono text-2xl font-bold">
+                    &lt;C# /&gt;
+                </div>
+                <div
+                    class="absolute top-1/3 right-[5%] animate-float-slow text-techCyan/30 font-mono text-sm hidden sm:block">
+                    var dev = new Developer();
+                </div>
+                <div
+                    class="absolute bottom-1/4 left-[6%] animate-float text-purple-500/30 font-mono text-lg hidden sm:block">
+                    SELECT * FROM Projects;
+                </div>
+                <div class="absolute bottom-12 right-[10%] animate-float-slow text-emerald-400/30 font-mono text-sm">
+                    [HttpPost] // Web API
+                </div>
+                <div
+                    class="absolute top-1/2 left-[2%] animate-float-slow text-amber-400/25 font-mono text-xs hidden lg:block">
+                    // 500+ Codeforces Solved
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+
+                <!-- Hero Left / Main Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left" data-aos="fade-right"
+                    data-aos-duration="1000">
+                    <!-- Status Badge -->
+                    <div
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dotnet-600/10 border border-dotnet-500/30 text-dotnet-400 text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 -ml-4"></span>
+                        <span data-en="Full Stack .NET Developer" data-ar="متاح للعمل/التوظيف">Available for
+                            Freelance / Hire</span>
+                    </div>
+
+                    <!-- Main Name & Dynamic Headline -->
+                    <div>
+                        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-2">
+                            Moamen <span class="gradient-text">Elbadry</span>
+                        </h1>
+                        <p
+                            class="text-xl sm:text-2xl font-medium text-gray-300 font-mono flex items-center justify-center lg:justify-start gap-2">
+                            <span class="text-techCyan">&lt;/&gt;</span>
+                            <span id="typedText" class="typing-cursor text-dotnet-400 font-bold"></span>
+                        </p>
+                    </div>
+
+                    <!-- Intro Bio Paragraph -->
+                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed mx-auto lg:mx-0"
+                        data-en="Computer Science & AI student at Sohag University and Full Stack .NET Developer Intern at DEPI. Passionate about building robust web applications, clean architecture, and solving complex real-world problems with C# and ASP.NET Core."
+                        data-ar="طالب بكلية الحاسبات والذكاء الاصطناعي بجامعة سوهاج ومتدرب مطور دوت نت متكامل بمبادرة رواد مصر الرقمية (DEPI). شغوف ببناء تطبيقات ويب قوية، معمارية برمجية نظيفة، وحل المشكلات المعقدة باستخدام C# و ASP.NET Core.">
+                        Computer Science & AI at Sohag University and Full Stack .NET Developer Intern at DEPI.
+                        Passionate about building robust web applications, clean architecture, and solving complex
+                        real-world problems with C# and ASP.NET Core.
+                    </p>
+
+                    <!-- Tech Stack Pills -->
+                    <div class="pt-2 flex flex-wrap gap-2 justify-center lg:justify-start">
+                        <span
+                            class="px-3 py-1 rounded-md bg-gray-800/80 border border-gray-700 text-xs font-mono text-purple-300 flex items-center gap-1.5 hover:border-dotnet-500 transition-all">
+                            <i class="fa-brands fa-windows text-dotnet-500"></i> C# / .NET 8
+                        </span>
+                        <span
+                            class="px-3 py-1 rounded-md bg-gray-800/80 border border-gray-700 text-xs font-mono text-cyan-300 flex items-center gap-1.5 hover:border-techCyan transition-all">
+                            <i class="fa-solid fa-server text-techCyan"></i> ASP.NET Core API
+                        </span>
+                        <span
+                            class="px-3 py-1 rounded-md bg-gray-800/80 border border-gray-700 text-xs font-mono text-emerald-300 flex items-center gap-1.5 hover:border-emerald-500 transition-all">
+                            <i class="fa-solid fa-database text-emerald-400"></i> Entity Framework & SQL
+                        </span>
+                        <span
+                            class="px-3 py-1 rounded-md bg-gray-800/80 border border-gray-700 text-xs font-mono text-amber-300 flex items-center gap-1.5 hover:border-amber-500 transition-all">
+                            <i class="fa-solid fa-brain text-amber-400"></i> 500+ Codeforces Solved
+                        </span>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#projects"
+                            class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-dotnet-600 to-techCyan text-white font-semibold shadow-lg shadow-dotnet-600/30 hover:opacity-95 hover:scale-[1.02] transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <span data-en="View My Work" data-ar="مشاهدة المشاريع">View My Work</span>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/moamen-elbadry-174172340" target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white font-semibold transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-linkedin text-blue-400 text-lg"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+
+                        <a href="./Moamen_Resume.pdf" target="_blank"
+                            class="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-gray-800/80 hover:bg-gray-700/80 border border-gray-700/80 text-gray-300 font-semibold transition-all flex items-center justify-center gap-2 inline-flex">
+                            <i class="fa-solid fa-file-arrow-down text-techCyan"></i>
+                            <span data-en="Download CV" data-ar="تحميل السيرة الذاتية">Download CV</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right / Profile Image & Card Showcase -->
+                <div class="lg:col-span-5 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="relative w-full max-w-md">
+                        <!-- Card Border Aura -->
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-dotnet-600 to-techCyan rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200">
+                        </div>
+
+                        <!-- Card Surface -->
+                        <div
+                            class="relative glass-card rounded-3xl p-6 sm:p-8 border border-gray-800 text-center space-y-6">
+
+                            <!-- Profile Picture Container -->
+                            <div class="relative inline-block mx-auto">
+                                <div
+                                    class="w-48 h-48 sm:w-60 sm:h-60 rounded-2xl overflow-hidden border-2 border-dotnet-500 shadow-2xl mx-auto bg-gray-900 flex items-center justify-center group relative">
+                                    <img id="userProfileImg" src="./linkedinprofile.jpeg" alt="Moamen Elbadry Profile"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        onerror="this.src='https://placehold.co/400x400/1e1b4b/white?text=Moamen+Elbadry'">
+                                </div>
+                            </div>
+
+                            <!-- Person Identity Details -->
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Moamen Elbadry</h3>
+                                <p class="text-sm text-gray-400 font-mono mt-1" data-en="Sohag University | CS & AI '28"
+                                    data-ar="جامعة سوهاج | حاسبات وذكاء اصطناعي 2028">Sohag University | CS & AI '28</p>
+                            </div>
+
+                            <!-- Key Metrics Quick View Grid -->
+                            <div class="grid grid-cols-2 gap-3 pt-2 text-left">
+                                <div
+                                    class="p-3 rounded-xl bg-gray-900/60 border border-gray-800/80 hover:border-dotnet-500/50 transition-all">
+                                    <span class="block text-xs text-gray-400" data-en="Codeforces"
+                                        data-ar="كودفورسز">Codeforces</span>
+                                    <span class="text-lg font-bold text-techCyan">500+ Solved</span>
+                                </div>
+                                <div
+                                    class="p-3 rounded-xl bg-gray-900/60 border border-gray-800/80 hover:border-dotnet-500/50 transition-all">
+                                    <span class="block text-xs text-gray-400" data-en="Internship"
+                                        data-ar="التدريب">Internship</span>
+                                    <span class="text-lg font-bold text-dotnet-400">DEPI .NET</span>
+                                </div>
+                            </div>
+
+                            <!-- Social Contact Links -->
+                            <div class="flex items-center justify-center gap-4 pt-2 border-t border-gray-800">
+                                <a href="https://www.linkedin.com/in/moamen-elbadry-174172340" target="_blank"
+                                    class="w-10 h-10 rounded-xl bg-gray-800/80 hover:bg-dotnet-600 text-gray-300 hover:text-white flex items-center justify-center transition-all hover:scale-110"
+                                    title="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="mailto:elbadrymoamen254@gmail.com"
+                                    class="w-10 h-10 rounded-xl bg-gray-800/80 hover:bg-rose-600 text-gray-300 hover:text-white flex items-center justify-center transition-all hover:scale-110"
+                                    title="Email">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                                <a href="https://github.com/elbadrymoamen254-byte" target="_blank"
+                                    class="w-10 h-10 rounded-xl bg-gray-800/80 hover:bg-gray-700 text-gray-300 hover:text-white flex items-center justify-center transition-all hover:scale-110"
+                                    title="GitHub">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="https://codeforces.com" target="_blank"
+                                    class="w-10 h-10 rounded-xl bg-gray-800/80 hover:bg-amber-600 text-gray-300 hover:text-white flex items-center justify-center transition-all hover:scale-110"
+                                    title="Codeforces">
+                                    <i class="fa-solid fa-code"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950/50 border-y border-gray-800/60 relative">
+            <div class="max-w-7xl mx-auto space-y-12">
+
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h1 class="text-xl font-mono text-techCyan uppercase tracking-widest" data-en=" ABOUT ME"
+                        data-ar="عن فلسفتي "> ABOUT ME</h1>
+
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white"
+                        data-en="Engineering Mindset Meets Full Stack Capability"
+                        data-ar="عقلية هندسية ملهمة تلتقي مع برمجة الدوت نت المتكاملة">Engineering Mindset Meets Full
+                        Stack Capability</h3>
+                    <div class="w-20 h-1.5 bg-gradient-to-r from-dotnet-600 to-techCyan mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+
+                    <!-- Narrative Box -->
+                    <div
+                        class="lg:col-span-7 glass-card p-8 rounded-2xl border border-gray-800 space-y-5 flex flex-col justify-between">
+                        <div class="space-y-4 text-gray-300 leading-relaxed">
+                            <p data-en="For me, writing code isn't just about making things function; it's about translating messy, real-world challenges into clean, elegant, and reliable digital solutions."
+                                data-ar="أنا طالب جامعي بكلية الحاسبات والذكاء الاصطناعي بجامعة سوهاج. شغفي بالأكاديمية مدعوم بخبرة عملت بها كمتدرب مطور دوت نت متكامل بمبادرة رواد مصر الرقمية (DEPI) مما يتيح لي معالجة تطوير البرمجيات بانضباط مهندسي قوي.">
+
+                            <p data-en="For me, writing code isn't just about making things function; it's about translating
+                                messy, real-world challenges into clean, elegant, and reliable digital solutions."
+                                data-ar="بالنسبة لي، كتابة الكود ليست مجرد جعل الأشياء تعمل؛ إنها تتعلق بتحويل التحديات الفوضوية من العالم الحقيقي إلى حلول رقمية نظيفة وأنيقة وموثوقة">
+
+                                <span class="text-pink-400 font-bold drop-shadow-[0_0_4px_rgba(244,63,94,0.6)]"> For me,
+                                    writing code isn't just about making things function; it's about translating
+                                    messy, real-world challenges into clean, elegant, and reliable digital
+                                    solutions.</span>
+                            </p>
+                            <p data-en="I'm a Full Stack .NET Developerfocused on building reliable and scalable web applications.
+                            My academic background coupled with intensive hands-on
+                            experience as a Full Stack .NET Developer Intern at DEPI enables me to approach software
+                            development with rigorous engineering discipline."
+                                data-ar="أنا مطور Full Stack .NET متخصص في بناء تطبيقات ويب موثوقة وقابلة للتوسع. خلفيتي الأكاديمية جنبًا إلى جنب مع الخبرة العملية المكثفة كمتدرب Full Stack .NET في DEPI تمكنني من تناول تطوير البرمجيات بانضباط هندسي صارم.">
+                                I'm a Full Stack .NET Developer focused on building reliable and scalable web
+                                applications.
+                                My academic background coupled with intensive hands-on
+                                experience as a Full Stack .NET Developer Intern at DEPI enables me to approach software
+                                development with rigorous engineering discipline.
+
+                            </p>
+
+                            </p>
+                            <p data-en="My strong core in problem solving, algorithms, Object-Oriented Programming (OOP), and data structures allows me to write clean, maintainable, and high-performance code, debug complex enterprise issues efficiently, and collaborate smoothly in team settings."
+                                data-ar="خلفيتي القوية في حل المشكلات، الخوارزميات، البرمجة كائنية التوجه (OOP)، وهياكل البيانات تمكنني من كتابة كود نظيف وقابل للصيانة وعالي الأداء، وتتبع واستكشاف أخطاء التطبيقات المعقدة، والعمل الجماعي بفعالية.">
+                                My strong core in problem solving, algorithms, Object-Oriented Programming (OOP), and
+                                data structures allows me to write clean, maintainable, and high-performance code, debug
+                                complex enterprise issues efficiently, and collaborate smoothly in team settings.
+                            </p>
+                        </div>
+
+                        <!-- Highlights Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-gray-800">
+                            <div class="flex items-center gap-3">
+                                <div class="p-3 rounded-xl bg-dotnet-600/20 text-dotnet-400">
+                                    <i class="fa-solid fa-code text-xl"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-sm font-bold text-white">Clean Code</span>
+                                    <span class="text-xs text-gray-400" data-en="Maintainable Architecture"
+                                        data-ar="معمارية قابلة للصيانة">Maintainable Architecture</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="p-3 rounded-xl bg-techCyan/20 text-techCyan">
+                                    <i class="fa-solid fa-microchip text-xl"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-sm font-bold text-white">OOP & Logic</span>
+                                    <span class="text-xs text-gray-400" data-en="Strong DS & Algorithms"
+                                        data-ar="خوارزميات وهياكل بيانات">Strong DS & Algorithms</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="p-3 rounded-xl bg-amber-500/20 text-amber-400">
+                                    <i class="fa-solid fa-users text-xl"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-sm font-bold text-white">Teamwork</span>
+                                    <span class="text-xs text-gray-400" data-en="Clear Communication"
+                                        data-ar="تواصل فعال ومثمر">Clear Communication</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Tech Graphic Box -->
+                    <div
+                        class="lg:col-span-5 glass-card p-6 rounded-2xl border border-gray-800 flex flex-col justify-between relative overflow-hidden bg-gradient-to-br from-gray-900 to-techDark">
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-800">
+                            <span class="text-xs font-mono text-gray-400 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Architecture Overview
+                            </span>
+                            <span class="text-xs font-mono text-dotnet-400">C# / ASP.NET Core</span>
+                        </div>
+
+                        <!-- Diagram Visual Representation -->
+                        <div class="py-6 space-y-3 font-mono text-xs">
+                            <div
+                                class="p-3 rounded-xl bg-gray-900 border border-dotnet-500/40 text-center text-purple-300 font-semibold shadow-md">
+                                <i class="fa-solid fa-laptop text-techCyan mr-2"></i> Frontend (HTML5 / CSS / JS / Razor
+                                / Web API Integration)
+                            </div>
+                            <div class="flex justify-center text-gray-600">
+                                <i class="fa-solid fa-arrow-down-long animate-bounce text-base"></i>
+                            </div>
+                            <div
+                                class="p-3 rounded-xl bg-dotnet-900/60 border border-dotnet-500 text-center text-white font-semibold shadow-md">
+                                <i class="fa-solid fa-cubes text-dotnet-400 mr-2"></i> ASP.NET Core REST API & Business
+                                Logic (Clean Code)
+                            </div>
+                            <div class="flex justify-center text-gray-600">
+                                <i class="fa-solid fa-arrow-down-long animate-bounce text-base"></i>
+                            </div>
+                            <div
+                                class="p-3 rounded-xl bg-gray-900 border border-emerald-500/40 text-center text-emerald-300 font-semibold shadow-md">
+                                <i class="fa-solid fa-database text-emerald-400 mr-2"></i> Entity Framework Core ORM &
+                                SQL Server Database
+                            </div>
+                        </div>
+
+                        <div class="text-center text-xs text-gray-400 border-t border-gray-800 pt-3">
+                            <span data-en="Building enterprise-grade web APIs and scalable systems."
+                                data-ar="بناء واجهات برمجة تطبيقات واعدة وأنظمة قابلة للتوسع.">Building enterprise-grade
+                                web APIs and scalable systems.</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-7xl mx-auto space-y-12">
+
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-xl font-mono text-dotnet-400 uppercase tracking-widest" data-en="TECHNICAL SPECTRUM"
+                        data-ar="المهارات والتقنيات">TECHNICAL SPECTRUM</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white" data-en="Technologies & Software Tools"
+                        data-ar="أدوات وتقنيات البرمجة المتقنة">Technologies & Software Tools</h3>
+                    <p class="text-gray-400 text-sm sm:text-base"
+                        data-en="Comprehensive backend & frontend skill set focused on Microsoft .NET Ecosystem"
+                        data-ar="حزمة مهارات برمجية كاملة تركز بشكل أساسي على منظومة دوت نت">
+                        Comprehensive backend & frontend skill set focused on Microsoft .NET Ecosystem
+                    </p>
+                </div>
+
+                <!-- Skill Filter Tabs -->
+                <div
+                    class="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto bg-gray-900/80 p-1.5 rounded-2xl border border-gray-800">
+                    <button onclick="filterSkills('all')"
+                        class="skill-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-dotnet-600 text-white shadow"
+                        data-category="all" data-en="All Skills" data-ar="الكل">All Skills</button>
+                    <button onclick="filterSkills('backend')"
+                        class="skill-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition-all"
+                        data-category="backend" data-en="Backend & .NET" data-ar="الخلفية البرمجية">Backend &
+                        .NET</button>
+                    <button onclick="filterSkills('database')"
+                        class="skill-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition-all"
+                        data-category="database" data-en="Database & SQL" data-ar="قواعد البيانات">Database &
+                        SQL</button>
+                    <button onclick="filterSkills('frontend')"
+                        class="skill-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition-all"
+                        data-category="frontend" data-en="Frontend" data-ar="الواجهة الأمامية">Frontend</button>
+                    <button onclick="filterSkills('interpersonal')"
+                        class="skill-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition-all"
+                        data-category="interpersonal" data-en="Interpersonal"
+                        data-ar="المهارات الشخصية">Interpersonal</button>
+                </div>
+
+                <!-- Skills Grid Container -->
+                <div id="skillsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Skill Card: C# -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 hover:border-dotnet-500/50 transition-all group"
+                        data-category="backend">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-purple-950/80 border border-purple-800/50 flex items-center justify-center text-purple-400 text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <span
+                                class="text-xs font-mono px-2.5 py-1 rounded-full bg-purple-900/30 text-purple-300 border border-purple-800/40">Core
+                                Language</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">C# Language</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4"
+                            data-en="Strong proficiency in OOP, Generics, LINQ, Async/Await asynchronous programming, and clean syntax."
+                            data-ar="إتقان قوي للبرمجة كائنية التوجه، LINQ، والبرمجة غير المتزامنة Async/Await.">
+                            Strong proficiency in OOP, Generics, LINQ, Async/Await asynchronous programming, and clean
+                            syntax.
+                        </p>
+                        <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-dotnet-600 to-purple-400 h-full rounded-full w-[90%]">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card: ASP.NET Core -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 hover:border-dotnet-500/50 transition-all group"
+                        data-category="backend">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-indigo-950/80 border border-indigo-800/50 flex items-center justify-center text-indigo-400 text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-server"></i>
+                            </div>
+                            <span
+                                class="text-xs font-mono px-2.5 py-1 rounded-full bg-indigo-900/30 text-indigo-300 border border-indigo-800/40">Backend
+                                Framework</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">ASP.NET Core & Web APIs</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4"
+                            data-en="Designing RESTful APIs, Middleware configuration, Dependency Injection, JWT Authentication & Authorization."
+                            data-ar="تصميم RESTful APIs، ضبط الـ Middleware، Dependency Injection، والتوثيق بـ JWT.">
+                            Designing RESTful APIs, Middleware configuration, Dependency Injection, JWT Authentication &
+                            Authorization.
+                        </p>
+                        <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-dotnet-600 to-indigo-400 h-full rounded-full w-[88%]">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card: Entity Framework Core -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 hover:border-dotnet-500/50 transition-all group"
+                        data-category="database backend">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-emerald-950/80 border border-emerald-800/50 flex items-center justify-center text-emerald-400 text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-cubes-stacked"></i>
+                            </div>
+                            <span
+                                class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-900/30 text-emerald-300 border border-emerald-800/40">ORM</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Entity Framework Core</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4"
+                            data-en="Code-First & Migration workflows, DbContext configuration, LINQ querying, Relationships, and Repository Pattern."
+                            data-ar="منهجية Code-First والـ Migrations، استعلامات LINQ، وربط العلاقات والـ Repository Pattern.">
+                            Code-First & Migration workflows, DbContext configuration, LINQ querying, Relationships, and
+                            Repository Pattern.
+                        </p>
+                        <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-emerald-600 to-teal-400 h-full rounded-full w-[85%]">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card: SQL Server & Databases -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 hover:border-dotnet-500/50 transition-all group"
+                        data-category="database">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-cyan-950/80 border border-cyan-800/50 flex items-center justify-center text-techCyan text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <span
+                                class="text-xs font-mono px-2.5 py-1 rounded-full bg-cyan-900/30 text-cyan-300 border border-cyan-800/40">Relational
+                                DB</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Database & SQL Server</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4"
+                            data-en="Relational schema design, T-SQL queries, Stored Procedures, Indexing, and data integrity normalization."
+                            data-ar="تصميم المخططات العلاقية، استعلامات T-SQL، Stored Procedures، وترقيم الفهارس Indexing.">
+                            Relational schema design, T-SQL queries, Stored Procedures, Indexing, and data integrity
+                            normalization.
+                        </p>
+                        <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-techCyan to-blue-400 h-full rounded-full w-[85%]"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card: ASP.NET MVC -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 hover:border-dotnet-500/50 transition-all group"
+                        data-category="backend">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-pink-950/80 border border-pink-800/50 flex items-center justify-center text-pink-400 text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <span
+                                class="text-xs font-mono px-2.5 py-1 rounded-full bg-pink-900/30 text-pink-300 border border-pink-800/40">Architecture</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">ASP.NET MVC</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4"
+                            data-en="Model-View-Controller architecture, Razor views, Tag Helpers, Form validation, and ViewModels."
+                            data-ar="معمارية Model-View-Controller، صفحات Razor، الـ Tag Helpers، والتحقق من صحة المدخلات.">
+                            Model-View-Controller architecture, Razor views, Tag Helpers, Form validation, and
+                            ViewModels.
+                        </p>
+                        <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-pink-600 to-rose-400 h-full rounded-full w-[82%]"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card: Frontend Web Tech -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 hover:border-dotnet-500/50 transition-all group"
+                        data-category="frontend">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-amber-950/80 border border-amber-800/50 flex items-center justify-center text-amber-400 text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-html5"></i>
+                            </div>
+                            <span
+                                class="text-xs font-mono px-2.5 py-1 rounded-full bg-amber-900/30 text-amber-300 border border-amber-800/40">Client
+                                Side</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">HTML5, CSS3 & JavaScript</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4"
+                            data-en="Responsive layout design, DOM manipulation, Fetch API / AJAX integration with backend endpoints."
+                            data-ar="تصميم واجهات متجاوبة، التعامل مع DOM، واستخدام Fetch API للربط مع السيرفر.">
+                            Responsive layout design, DOM manipulation, Fetch API / AJAX integration with backend
+                            endpoints.
+                        </p>
+                        <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-amber-500 to-orange-400 h-full rounded-full w-[80%]">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card: Interpersonal & Soft Skills -->
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-gray-800 hover:border-dotnet-500/50 transition-all group"
+                        data-category="interpersonal">
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-blue-950/80 border border-blue-800/50 flex items-center justify-center text-blue-400 text-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                            <span
+                                class="text-xs font-mono px-2.5 py-1 rounded-full bg-blue-900/30 text-blue-300 border border-blue-800/40">Soft
+                                Skills</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Interpersonal & Communication</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-4"
+                            data-en="Active listening, collaborative team dynamics, agile adaptiveness, and effective technical presentations."
+                            data-ar="استماع فعال، عمل جماعي سلس، مرونة في التعلم والتطوير، وتقديم شروحات برمجية ممتازة.">
+                            Active listening, collaborative team dynamics, agile adaptiveness, and effective technical
+                            presentations.
+                        </p>
+                        <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-blue-600 to-cyan-400 h-full rounded-full w-[92%]"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950/50 border-y border-gray-800/60">
+            <div class="max-w-7xl mx-auto space-y-12">
+
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-xl font-mono text-techCyan uppercase tracking-widest" data-en="CAREER JOURNEY"
+                        data-ar="المسيرة المهنية"> CAREER JOURNEY</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white"
+                        data-en="Professional Experience & Internships" data-ar="الخبرات المهنية والتدريب">Professional
+                        Experience & Internships</h3>
+                    <p class="text-gray-400 text-sm sm:text-base"
+                        data-en="Real-world hands-on software development training and project contributions"
+                        data-ar="تطوير تطبيقات حقيقية والمشاركة في مشاريع برمجية مميزة">
+                        Real-world hands-on software development training and project contributions
+                    </p>
+                </div>
+
+                <!-- DEPI Internship Featured Box -->
+                <div
+                    class="glass-card p-8 rounded-3xl border border-dotnet-500/30 relative overflow-hidden group hover:border-dotnet-500 transition-all">
+                    <!-- Top Ribbon -->
+                    <div
+                        class="absolute top-0 right-0 bg-gradient-to-l from-dotnet-600 to-techCyan text-white text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-xl shadow-lg">
+                        Jul 2026 – Present (3 mos)
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                        <!-- Company Logo & Title Info -->
+                        <div class="lg:col-span-4 space-y-4">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-dotnet-600 to-indigo-900 border border-dotnet-500/50 flex items-center justify-center text-white text-2xl font-bold shadow-xl">
+                                DEPI
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-white">Full Stack .NET Developer Intern</h4>
+                                <p class="text-dotnet-400 font-medium text-sm">Digital Egypt Pioneers Initiative - DEPI
+                                </p>
+                                <p class="text-xs text-gray-400 font-mono mt-1 flex items-center gap-2">
+                                    <i class="fa-solid fa-location-dot text-rose-500"></i> Sohag, Egypt · Hybrid
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Internship Responsibilities List -->
+                        <div class="lg:col-span-8 space-y-4 text-gray-300 text-sm leading-relaxed">
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-dotnet-400 mt-1 flex-shrink-0"></i>
+                                    <span
+                                        data-en="Developing full-stack web applications using C#, .NET, ASP.NET Core, SQL Server, and Entity Framework Core."
+                                        data-ar="بناء تطبيقات ويب متكاملة باستخدام C#، .NET، ASP.NET Core، SQL Server، و EF Core.">
+                                        Developing full-stack web applications using C#, .NET, ASP.NET Core, SQL Server,
+                                        and Entity Framework Core.
+                                    </span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-dotnet-400 mt-1 flex-shrink-0"></i>
+                                    <span
+                                        data-en="Applying Object-Oriented Programming (OOP), Data Structures, Algorithms, and clean coding principles to construct maintainable enterprise solutions."
+                                        data-ar="تطبيق مفاهيم البرمجة كائنية التوجه، هياكل البيانات، ومبادئ الكود النظيف لبناء برمجيات مستقرة.">
+                                        Applying Object-Oriented Programming (OOP), Data Structures, Algorithms, and
+                                        clean coding principles to construct maintainable enterprise solutions.
+                                    </span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-dotnet-400 mt-1 flex-shrink-0"></i>
+                                    <span
+                                        data-en="Designing relational databases with SQL Server, including queries optimization, stored procedures, and complex join relationships."
+                                        data-ar="تصميم قواعد البيانات العلاقية بـ SQL Server، كتابة الاستعلامات المعقدة، والـ Stored Procedures.">
+                                        Designing relational databases with SQL Server, including queries optimization,
+                                        stored procedures, and complex join relationships.
+                                    </span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-dotnet-400 mt-1 flex-shrink-0"></i>
+                                    <span
+                                        data-en="Building secure RESTful APIs and integrating backend micro-services seamlessly with frontend modern user interfaces."
+                                        data-ar="بناء RESTful APIs آمنة وربط الخدمات الخلفية مع واجهات المستخدم بسلاسة.">
+                                        Building secure RESTful APIs and integrating backend micro-services seamlessly
+                                        with frontend modern user interfaces.
+                                    </span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-dotnet-400 mt-1 flex-shrink-0"></i>
+                                    <span
+                                        data-en="Participating actively in the complete SDLC lifecycle from requirements analysis and database modeling to deployment."
+                                        data-ar="المشاركة في كامل دورة حياة تطوير البرمجيات (SDLC) بدءاً من تحليل المتطلبات وحتى الاختبار والتسليم.">
+                                        Participating actively in the complete SDLC lifecycle from requirements analysis
+                                        and database modeling to deployment.
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <!-- Skill Badges -->
+                            <div class="pt-4 flex flex-wrap gap-2 border-t border-gray-800">
+                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300 font-mono">ASP.NET
+                                    Core</span>
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300 font-mono">C#</span>
+                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300 font-mono">EF
+                                    Core</span>
+                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300 font-mono">SQL
+                                    Server</span>
+                                <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300 font-mono">REST
+                                    API</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-7xl mx-auto space-y-12">
+
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-xl font-mono text-dotnet-400 uppercase tracking-widest"
+                        data-en="ACADEMIC FOUNDATION" data-ar="المؤهل الأكاديمي">ACADEMIC FOUNDATION</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white" data-en="Education & Campus Leadership"
+                        data-ar="التعليم والنشاط الجامعي">Education & Campus Leadership</h3>
+                </div>
+
+                <div
+                    class="glass-card p-8 rounded-3xl border border-gray-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+                    <div
+                        class="lg:col-span-5 space-y-4 border-b lg:border-b-0 lg:border-r border-gray-800 pb-6 lg:pb-0 lg:pr-8">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-techCyan/20 text-techCyan flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-mono text-dotnet-400">Sep 2024 – Oct 2028</span>
+                            <h4 class="text-2xl font-bold text-white mt-1">Sohag University</h4>
+                            <p class="text-gray-300 text-sm font-medium">Faculty of Computers Science and Artificial
+                                Intelligence</p>
+                            <p class="text-xs text-gray-400 mt-1"
+                                data-en="Bachelor's Degree in Computer Science & Artificial Intelligence"
+                                data-ar="درجة البكالوريوس في الحاسبات والذكاء الاصطناعي">
+                                Bachelor's Degree in Computer Science & Artificial Intelligence
+                            </p>
+                        </div>
+                        <div
+                            class="inline-block px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+                            Grade: The Third group
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-4 text-gray-300 text-sm leading-relaxed">
+                        <h5 class="text-base font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-award text-amber-400"></i>
+                            <span data-en="Activities, Societies & Accomplishments"
+                                data-ar="الأنشطة والمشاركات الجامعية">Activities, Societies & Accomplishments</span>
+                        </h5>
+                        <ul class="space-y-2 text-xs sm:text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-chevron-right text-techCyan text-xs mt-1"></i>
+                                <span data-en="Active Member of Sohag University Competitive Programming Team."
+                                    data-ar="عضو نشط في فريق البرمجة التنافسية بجامعة سوهاج.">Active Member of Sohag
+                                    University Competitive Programming Team.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-chevron-right text-techCyan text-xs mt-1"></i>
+                                <span data-en="Participant in AI competitions & practical machine learning workshops."
+                                    data-ar="مشارك في مسابقات الذكاء الاصطناعي وورش العمل التقنية.">Participant in AI
+                                    competitions & practical machine learning workshops.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-chevron-right text-techCyan text-xs mt-1"></i>
+                                <span data-en="Volunteer at the Technology Club, mentoring peers in problem solving."
+                                    data-ar="متطوع بنادي التكنولوجيا لمساعدة زملائه في مفاهيم حل المشكلات البرمجية.">Volunteer
+                                    at the Technology Club, mentoring peers in problem solving.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CODEFORCES / PROBLEM SOLVING SECTION -->
+        <section id="problem-solving"
+            class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950/50 border-y border-gray-800/60 relative">
+            <div class="max-w-7xl mx-auto space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-xl font-mono text-amber-400 uppercase tracking-widest" data-en="ALGORITHMIC MASTERY"
+                        data-ar=" إتقان الخوارزميات"> ALGORITHMIC MASTERY</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white"
+                        data-en="Competitive Programming & Codeforces" data-ar="البرمجة التنافسية وحل المشكلات">
+                        Competitive Programming & Codeforces</h3>
+                    <p class="text-gray-400 text-sm sm:text-base"
+                        data-en="Proven problem solver with over 500+ accepted solutions on Codeforces"
+                        data-ar="محلل مشكلات محترف مع أكثر من 500 مسألة برمجية محلولة على كودفورسز">
+                        Proven problem solver with over 500+ accepted solutions on Codeforces
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+                    <!-- Stats Counter Card -->
+                    <div
+                        class="lg:col-span-5 glass-card p-8 rounded-3xl border border-amber-500/30 text-center space-y-6 relative overflow-hidden bg-gradient-to-b from-amber-950/20 to-techDark">
+                        <div
+                            class="w-20 h-20 rounded-2xl bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center justify-center text-4xl mx-auto">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div>
+                            <span class="text-5xl font-extrabold text-amber-400 font-mono tracking-tight"
+                                id="solvedCounter">500+</span>
+                            <span class="block text-sm font-semibold text-white mt-2"
+                                data-en="Problems Solved on Codeforces"
+                                data-ar="مسألة برمجية تم حلها بمركز كودفورسز">Problems Solved on Codeforces</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed"
+                            data-en="Demonstrating mastery in Time & Space Complexity analysis, Dynamic Programming, Graph algorithms, and Greedy techniques."
+                            data-ar="إتقان تحليل التعقيد الزمني والمكاني (Big-O)، البرمجة الديناميكية، ورسومات البياني (Graphs).">
+                            Demonstrating mastery in Time & Space Complexity analysis, Dynamic Programming, Graph
+                            algorithms, and Greedy techniques.
+                        </p>
+                        <a href="https://codeforces.com" target="_blank"
+                            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-semibold text-xs border border-amber-500/40 transition-all">
+                            <span>Visit Codeforces Profile</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+
+                    <!-- Interactive Code Viewer Terminal -->
+                    <div class="lg:col-span-7 glass-card rounded-2xl border border-gray-800 overflow-hidden shadow-2xl">
+                        <!-- Terminal Bar -->
+                        <div class="bg-gray-900 px-4 py-3 flex items-center justify-between border-b border-gray-800">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                                <span class="ml-2 text-xs font-mono text-gray-400">Solution.cs - C# 12</span>
+                            </div>
+                            <span class="text-[10px] font-mono text-dotnet-400">O(log N) Binary Search</span>
+                        </div>
+
+                        <!-- Terminal Code View -->
+                        <div class="p-4 bg-techDark font-mono text-xs text-gray-300 overflow-x-auto space-y-1">
+                            <pre class="text-purple-400"><span class="text-blue-400">using</span> System;
+
+<span class="text-blue-400">public class</span> <span class="text-amber-300">ProblemSolver</span>
+{
+    <span class="text-blue-400">public static int</span> <span class="text-emerald-400">BinarySearch</span>(<span class="text-blue-400">int</span>[] arr, <span class="text-blue-400">int</span> target)
+    {
+        <span class="text-blue-400">int</span> left = <span class="text-cyan-400">0</span>, right = arr.Length - <span class="text-cyan-400">1</span>;
+        <span class="text-blue-400">while</span> (left &lt;= right)
+        {
+            <span class="text-blue-400">int</span> mid = left + (right - left) / <span class="text-cyan-400">2</span>;
+            <span class="text-blue-400">if</span> (arr[mid] == target) <span class="text-blue-400">return</span> mid;
+            <span class="text-blue-400">if</span> (arr[mid] &lt; target) left = mid + <span class="text-cyan-400">1</span>;
+            <span class="text-blue-400">else</span> right = mid - <span class="text-cyan-400">1</span>;
+        }
+        <span class="text-blue-400">return</span> -<span class="text-cyan-400">1</span>; <span class="text-gray-500">// Target Not Found</span>
+    }
+}</pre>
+                        </div>
+
+                        <div
+                            class="p-3 bg-gray-900/90 border-t border-gray-800 text-xs font-mono text-emerald-400 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Status: ACCEPTED (Time: 15ms | Memory: 3.2MB)</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-7xl mx-auto space-y-12">
+
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-xl font-mono text-dotnet-400 uppercase tracking-widest" data-en="FEATURED WORK"
+                        data-ar="الأعمال المميزة">FEATURED WORK</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white" data-en="Practical Software Solutions"
+                        data-ar="مشاريع وحلول برمجية عمليّة">Practical Software Solutions</h3>
+                    <p class="text-gray-400 text-sm sm:text-base"
+                        data-en="Real-world projects built with clean architecture, ASP.NET Core, EF Core, and SQL Server"
+                        data-ar="مشاريع حقيقية مبنية بمعمارية نظيفة وتقنيات دوت نت حديثة">
+                        Real-world projects built with clean architecture, ASP.NET Core, EF Core, and SQL Server
+                    </p>
+                </div>
+
+                <!-- Projects Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Project 1: E-Commerce REST API (الكارت بالكامل قابل للضغط) -->
+                    <a href="https://github.com/MoamenElbadry" target="_blank" rel="noopener noreferrer"
+                        class="glass-card rounded-2xl border border-gray-800 overflow-hidden group hover:border-dotnet-500/60 transition-all duration-300 flex flex-col justify-between block hover:-translate-y-1 hover:shadow-xl">
+                        <div>
+                            <!-- Image Wrapper -->
+                            <div class="relative h-48 bg-gray-900 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80"
+                                    alt="E-Commerce API"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-techDark via-transparent to-transparent">
+                                </div>
+                                <span
+                                    class="absolute top-3 left-3 bg-dotnet-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase font-mono shadow">
+
+                                </span>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <h4
+                                        class="text-xl font-bold text-white group-hover:text-dotnet-400 transition-colors">
+                                        E-Commerce
+                                    </h4>
+                                    <i
+                                        class="fa-brands fa-github text-xl text-gray-400 group-hover:text-white transition-colors"></i>
+                                </div>
+                                <p class="text-gray-400 text-xs leading-relaxed"
+                                    data-en="Online shopping platform with JWT auth, payment gateway mock, Repository pattern, and EF Core migrations."
+                                    data-ar="واجهة برمجية متكاملة لمتجر إلكتروني مع التوثيق بـ JWT وأنماط التصميم النظيفة.">
+                                    Online shopping platform with JWT auth, payment gateway mock, Repository pattern,
+                                    and EF Core migrations.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Footer & Tech Stack -->
+                        <div class="px-6 pb-6 pt-2 space-y-4">
+                            <div class="flex flex-wrap gap-1.5 font-mono text-[10px]">
+                                <span
+                                    class="px-2 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-800/40">C#</span>
+                                <span
+                                    class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/40">EF
+                                    Core</span>
+                                <span
+                                    class="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/40">SQL
+                                    Server</span>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-2 border-t border-gray-800 pt-3 text-xs font-medium text-gray-300 group-hover:text-dotnet-400 transition-colors">
+                                <i class="fa-brands fa-github text-sm"></i>
+                                <span>Code Repository</span>
+                                <i
+                                    class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-auto opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Project 2: University AI Management Portal (Clickable Card) -->
+        <a href="https://github.com/MoamenElbadry" target="_blank" rel="noopener noreferrer"
+            class="glass-card rounded-2xl border border-gray-800 overflow-hidden group hover:border-techCyan/60 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl hover:shadow-techCyan/10">
+            <div>
+                <!-- Image Wrapper -->
+                <div class="relative h-48 bg-gray-900 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+                        alt="University Portal"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-techDark via-transparent to-transparent"></div>
+                    <span
+                        class="absolute top-3 left-3 bg-techCyan text-gray-950 text-[10px] font-bold px-2.5 py-1 rounded-md uppercase font-mono shadow">
+                        SQL
+                    </span>
+                </div>
+
+                <!-- Content -->
+                <div class="p-6 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-xl font-bold text-white group-hover:text-techCyan transition-colors">
+                            Sohag AI Student Portal
+                        </h4>
+                        <i
+                            class="fa-brands fa-github text-xl text-gray-400 group-hover:text-techCyan transition-colors"></i>
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed"
+                        data-en="Web portal designed for CS & AI university team events, competitive programming registration, and contest scoreboards."
+                        data-ar="بوابة ويب لإدارة فاعليات ومسابقات البرمجة والتسجيل لمؤتمرات كلية الحاسبات.">
+                        Web portal designed for CS & AI university team events, competitive programming registration,
+                        and contest scoreboards.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer & Tech Stack -->
+            <div class="px-6 pb-6 pt-2 space-y-4">
+                <div class="flex flex-wrap gap-1.5 font-mono text-[10px]">
+                    <span
+                        class="px-2 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-800/40">C#</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800/40">SQL
+                        Server</span>
+                    <span
+                        class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800/40">JavaScript</span>
+                </div>
+
+                <div
+                    class="flex items-center gap-2 border-t border-gray-800 pt-3 text-xs font-medium text-gray-300 group-hover:text-techCyan transition-colors">
+                    <i class="fa-brands fa-github text-sm"></i>
+                    <span>Code Repository</span>
+                    <i
+                        class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-auto opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+            </div>
+        </a>
+
+        <!-- AI CHAT ASSISTANT SECTION -->
+        <section id="ai-assistant" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-950/50 border-y border-gray-800/60">
+            <div class="max-w-4xl mx-auto space-y-8">
+
+                <div class="text-center space-y-3">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-techCyan/10 text-techCyan text-xs font-mono">
+                        <i class="fa-solid fa-robot"></i> Powered by Gemini 3 Flash API
+                    </div>
+                    <h3 class="text-3xl font-extrabold text-white" data-en="Ask Moamen's AI Assistant"
+                        data-ar="اسأل المساعد الذكي الخاص بمؤمن">Ask Moamen's AI Assistant</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm"
+                        data-en="Have questions about Moamen's skills, DEPI internship, or university projects? Ask the AI!"
+                        data-ar="هل لديك استفسار عن مهارات مؤمن أو تدريب DEPI أو مشاريع الكلية؟ اسأل الذكاء الاصطناعي الآن!">
+                        Have questions about Moamen's skills, DEPI internship, or university projects? Ask the AI!
+                    </p>
+                </div>
+
+                <!-- Chat Box Card -->
+                <div
+                    class="glass-card rounded-2xl border border-gray-800 overflow-hidden shadow-2xl flex flex-col h-[450px]">
+                    <!-- Chat Header -->
+                    <div class="bg-gray-900 px-6 py-4 border-b border-gray-800 flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-full bg-gradient-to-tr from-dotnet-600 to-techCyan flex items-center justify-center text-white text-xs font-bold">
+                            AI
+                        </div>
+                        <div>
+                            <span class="block text-xl font-bold text-white">Moamen Portfolio Bot</span>
+                            <span class="block text-[10px] text-emerald-400 font-mono">● Online & Ready</span>
+                        </div>
+                    </div>
+
+                    <!-- Chat Messages Log -->
+                    <div id="chatMessages" class="flex-grow p-6 overflow-y-auto space-y-4 text-xs sm:text-sm">
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-7 h-7 rounded-full bg-dotnet-600/30 text-dotnet-400 flex items-center justify-center text-xs flex-shrink-0">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <div
+                                class="bg-gray-800/80 p-3.5 rounded-2xl rounded-tl-none border border-gray-700/60 max-w-[85%] text-gray-200">
+                                Hi there! I'm Moamen's AI representative. Ask me anything about his technical stack in
+                                .NET, C#, competitive programming achievements, or DEPI experience!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Prompt Chips -->
+                    <div
+                        class="px-6 py-2 bg-gray-900/60 border-t border-gray-800/60 flex items-center gap-2 overflow-x-auto text-[11px] font-mono">
+                        <button onclick="sendQuickPrompt('What are Moamen\'s core technical skills?')"
+                            class="px-2.5 py-1 rounded-full bg-gray-800 hover:bg-dotnet-600 text-gray-300 hover:text-white transition-all whitespace-nowrap">Core
+                            Skills?</button>
+                        <button onclick="sendQuickPrompt('Tell me about his DEPI internship')"
+                            class="px-2.5 py-1 rounded-full bg-gray-800 hover:bg-dotnet-600 text-gray-300 hover:text-white transition-all whitespace-nowrap">DEPI
+                            Internship?</button>
+                        <button onclick="sendQuickPrompt('What is his problem solving score on Codeforces?')"
+                            class="px-2.5 py-1 rounded-full bg-gray-800 hover:bg-dotnet-600 text-gray-300 hover:text-white transition-all whitespace-nowrap">Codeforces
+                            Stats?</button>
+                    </div>
+
+                    <!-- Chat Input -->
+                    <form onsubmit="handleChatSubmit(event)"
+                        class="p-4 bg-gray-900 border-t border-gray-800 flex gap-2">
+                        <input type="text" id="chatInput" placeholder="Ask a question about Moamen..."
+                            class="flex-grow bg-gray-800/80 border border-gray-700 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-dotnet-500">
+                        <button type="submit" id="chatSendBtn"
+                            class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-dotnet-600 to-techCyan text-white font-semibold text-xs hover:opacity-90 transition-all flex items-center gap-1">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-7xl mx-auto space-y-12">
+
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <h2 class="text-xl font-mono text-dotnet-400 uppercase tracking-widest" data-en="GET IN TOUCH"
+                        data-ar=" تواصل معي"> GET IN TOUCH</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white"
+                        data-en="Let's Build Impactful Software Together" data-ar="لنصل لمشروعك القادم معاً">Let's Build
+                        Impactful Software Together</h3>
+                    <p class="text-gray-400 text-sm sm:text-base"
+                        data-en="Open for Full Stack .NET opportunities, freelance web development, and engineering collaborations."
+                        data-ar="متاح للفرص الوظيفية في تطوير الدوت نت، المشاريع الحرة، والتشاركات التقنية.">
+                        Open for Full Stack .NET opportunities, freelance web development, and engineering
+                        collaborations.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                    <!-- Contact Info Column -->
+                    <div class="lg:col-span-5 space-y-6">
+
+                        <div class="glass-card p-6 rounded-2xl border border-gray-800 flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-dotnet-600/20 text-dotnet-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-gray-400" data-en="Direct Email"
+                                    data-ar="البريد الإلكتروني">Direct Email</span>
+                                <a href="mailto:elbadrymoamen254@gmail.com"
+                                    class="text-sm font-bold text-white hover:text-dotnet-400 transition-colors">elbadrymoamen254@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-2xl border border-gray-800 flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-gray-400">LinkedIn Network</span>
+                                <a href="https://www.linkedin.com/in/moamen-elbadry-174172340" target="_blank"
+                                    class="text-sm font-bold text-white hover:text-blue-400 transition-colors">moamen-elbadry-174172340</a>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-2xl border border-gray-800 flex items-center gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-techCyan/20 text-techCyan flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-gray-400" data-en="Location"
+                                    data-ar="الموقع">Location</span>
+                                <span class="text-sm font-bold text-white">Sohag, Egypt</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Interactive Contact Form -->
+                    <div class="lg:col-span-7 glass-card p-8 rounded-3xl border border-gray-800">
+                        <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="space-y-1">
+                                    <label class="text-xs font-mono text-gray-300" data-en="Your Name"
+                                        data-ar="اسمك">Your Name</label>
+                                    <input type="text" id="senderName" required placeholder="John Doe"
+                                        class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-dotnet-500">
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-xs font-mono text-gray-300" data-en="Email Address"
+                                        data-ar="عنوان البريد">Email Address</label>
+                                    <!-- تم إصلاح صيغة الـ pattern لعدم إعطاء Regex Error -->
+                                    <input type="email" id="senderEmail" required
+                                        pattern="[a-zA-Z0-9._%\+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                                        title="يرجى إدخال عنوان بريد إلكتروني صحيح مثل: example@domain.com"
+                                        placeholder="john@example.com"
+                                        class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-dotnet-500">
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-mono text-gray-300" data-en="Subject"
+                                    data-ar="الموضوع">Subject</label>
+                                <input type="text" id="msgSubject" required
+                                    placeholder="Project Inquiry / Job Opportunity"
+                                    class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-dotnet-500">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-mono text-gray-300" data-en="Message"
+                                    data-ar="الرسالة">Message</label>
+                                <textarea rows="4" id="msgContent" required
+                                    placeholder="Hello Moamen, I'd like to discuss a project..."
+                                    class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-dotnet-500"></textarea>
+                            </div>
+
+                            <!-- تم إضافة id="submitBtn" و id="btnText" لتفادي خطأ الـ Null -->
+                            <button type="submit" id="submitBtn"
+                                class="w-full py-3.5 rounded-xl bg-gradient-to-r from-dotnet-600 to-techCyan text-white font-bold text-sm shadow-lg shadow-dotnet-600/30 hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span id="btnText" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-950 border-t border-gray-800 py-10 px-4 sm:px-6 lg:px-8">
+        <div
+            class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-6 h-6 rounded bg-dotnet-600 flex items-center justify-center text-white font-bold text-xs">
+                    M</div>
+                <span class="font-bold text-white">Moamen Elbadry</span>
+                <span>© 2026 All Rights Reserved.</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.linkedin.com/in/moamen-elbadry-174172340" target="_blank"
+                    class="hover:text-dotnet-400 transition-colors">LinkedIn</a>
+                <a href="mailto:elbadrymoamen254@gmail.com" class="hover:text-dotnet-400 transition-colors">Email</a>
+                <a href="https://codeforces.com" target="_blank"
+                    class="hover:text-dotnet-400 transition-colors">Codeforces</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- JAVASCRIPT APP LOGIC -->
+    <script>
+        // Language State Management
+        let currentLang = 'en';
+
+        // Dynamic Role Typing Effect
+        const roles = [
+            "Full Stack .NET Developer",
+            "ASP.NET Core Specialist",
+            "Competitive Programmer (500+ Solved)",
+            "CS & AI Student @ Sohag Univ"
+        ];
+
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typedTextElement = document.getElementById('typedText');
+
+        function typeEffect() {
+            const currentRole = roles[roleIndex];
+            if (isDeleting) {
+                typedTextElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedTextElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typingSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                typingSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typingSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typingSpeed);
+        }
+
+        // Toggle Language Function
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+            document.getElementById('langText').textContent = currentLang === 'en' ? 'العربية' : 'English';
+
+            // Update all elements with data-en and data-ar attributes
+            const translatableElements = document.querySelectorAll('[data-en][data-ar]');
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+        }
+
+        // Skill Filtering
+        function filterSkills(category) {
+            const tabs = document.querySelectorAll('.skill-tab');
+            tabs.forEach(tab => {
+                if (tab.getAttribute('data-category') === category) {
+                    tab.className = "skill-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-dotnet-600 text-white shadow";
+                } else {
+                    tab.className = "skill-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition-all";
+                }
+            });
+
+            const cards = document.querySelectorAll('.skill-card');
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat.includes(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Photo Modal Functions
+        function openPhotoModal() {
+            document.getElementById('photoModal').classList.remove('hidden');
+        }
+
+        function closePhotoModal() {
+            document.getElementById('photoModal').classList.add('hidden');
+        }
+
+        function saveProfilePhoto() {
+            const urlInput = document.getElementById('photoUrlInput').value.trim();
+            const fileInput = document.getElementById('photoFileInput');
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const base64Img = e.target.result;
+                    document.getElementById('userProfileImg').src = base64Img;
+                    localStorage.setItem('moamen_profile_photo', base64Img);
+                    closePhotoModal();
+                }
+                reader.readAsDataURL(fileInput.files[0]);
+            } else if (urlInput !== '') {
+                document.getElementById('userProfileImg').src = urlInput;
+                localStorage.setItem('moamen_profile_photo', urlInput);
+                closePhotoModal();
+            }
+        }
+
+        function resetDefaultPhoto() {
+            const defaultPhoto = 'My_Protoflio?auto=format&fit=crop&w=600&q=80';
+            document.getElementById('userProfileImg').src = defaultPhoto;
+            localStorage.removeItem('moamen_profile_photo');
+            closePhotoModal();
+        }
+
+        function loadSavedPhoto() {
+            const saved = localStorage.getItem('moamen_profile_photo');
+            if (saved) {
+                document.getElementById('userProfileImg').src = saved;
+            }
+        }
+
+        // Resume Download Simulator
+        function downloadResume() {
+            const textContent = `MOAMEN ELBADRY
+Computer Science & Artificial Intelligence Student @ Sohag University
+Full Stack .NET Developer Intern @ DEPI
+Email: elbadrymoamen254@gmail.com
+LinkedIn: https://www.linkedin.com/in/moamen-elbadry-174172340
+
+TECHNICAL SKILLS:
+- C#, .NET, ASP.NET Core, ASP.NET MVC, Web APIs
+- Entity Framework Core, SQL Server, Relational Databases
+- HTML5, CSS3, JavaScript
+- Object-Oriented Programming (OOP), Data Structures & Algorithms
+- Over 500+ problems solved on Codeforces
+
+EXPERIENCE:
+Full Stack .NET Developer Intern - Digital Egypt Pioneers Initiative (DEPI) (Jul 2026 - Present)
+- Developing full-stack web applications using C#, ASP.NET Core, SQL Server, EF Core.
+- Building RESTful APIs, clean architecture, stored procedures.
+
+EDUCATION:
+Sohag University - B.Sc. Computer Science & AI (2024 - 2028)
+- Member of University Programming Team & AI Competitions.`;
+
+            const blob = new Blob([textContent], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Moamen_Elbadry_CV.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Contact Form Submission
+        // 1. ضع الـ Public Key هنا
+        (function () {
+            emailjs.init("");
+        })();
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('senderName').value.trim();
+            const email = document.getElementById('senderEmail').value.trim();
+            const subject = document.getElementById('msgSubject').value.trim();
+            const message = document.getElementById('msgContent').value.trim();
+
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                alert("يرجى إدخال بريد إلكتروني صحيح ومكتمل.");
+                return;
+            }
+
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            submitBtn.disabled = true;
+            btnText.innerText = "جاري الإرسال...";
+
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message
+            };
+
+            // 2. ضع الـ Service ID والـ Template ID هنا
+            emailjs.send("", "", templateParams)
+                .then(function (response) {
+                    // توجيه للواتساب مع رسالة الجيميل
+                    const myPhoneNumber = "201224044624";
+                    const whatsappText = `مرحباً مؤمن، وصلتك رسالة جديدة من الموقع:\n\n*الاسم:* ${name}\n*البريد:* ${email}\n*الموضوع:* ${subject}\n\n*الرسالة:*\n${message}`;
+
+                    const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(whatsappText)}`;
+
+                    window.open(whatsappUrl, '_blank');
+
+                    alert("تم إرسال الرسالة إلى البريد الإلكتروني بنجاح، وجاري فتح الواتساب للتواصل المباشر!");
+                    event.target.reset();
+                }, function (error) {
+                    console.error('FAILED...', error);
+                    const myPhoneNumber = "201224044624";
+                    const whatsappText = `مرحباً مؤمن، وصلتك رسالة من الموقع:\n\n*الاسم:* ${name}\n*البريد:* ${email}\n*الموضوع:* ${subject}\n\n*الرسالة:*\n${message}`;
+                    window.open(`https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(whatsappText)}`, '_blank');
+                })
+                .finally(function () {
+                    submitBtn.disabled = false;
+                    btnText.innerText = "إرسال الرسالة";
+                });
+        }
+        // Gemini AI Assistant Chat API Handler
+        const moamenResumeContext = `You are the official AI assistant and personal representative for Moamen Elbadry.
+
+CRITICAL INSTRUCTION FOR LANGUAGE:
+- You MUST detect the language of the user's input message and reply in the EXACT SAME LANGUAGE.
+- If the user sends a message in English, reply entirely in English.
+- If the user sends a message in Arabic, reply entirely in Arabic.
+
+=== MOAMEN'S PROFILE & FREELANCE DETAILS ===
+- Name: Moamen Elbadry Hassan Rayyan.
+- Role: Full Stack .NET Developer & CS/AI Student at Sohag University.
+
+1. PROJECT DEADLINES & TIMELINESS (المواعيد وتسليم المشاريع):
+- Moamen is highly committed to strict project deadlines (100% On-Time Delivery).
+- He provides regular progress updates (mid-project status reports, clear milestones, active communication).
+- He values clean code, proper testing, and delivering scalable solutions without delaying client schedules.
+
+2. PROJECTS PORTFOLIO (المشاريع التي قام بعملها):
+- E-Commerce REST API: Built with ASP.NET Core, Entity Framework Core, Clean Architecture, Repository Pattern, JWT Authentication, and SQL Server.
+- Sohag AI Student Portal: Web portal built for managing university events, programming contests, and student communication.
+- Personal Contact Book & Task Manager: ASP.NET Core & SQL Server application for efficient data management.
+- Educational & Academic Systems: T-SQL database architecture, C++ competitive algorithms (500+ Codeforces solved problems).
+
+3. CLIENT REVIEWS & FEEDBACK (تقييم العملاء ورأيهم فيه):
+- Clients consistently evaluate Moamen with high ratings (5/5 Stars) for:
+  * Excellent and transparent communication.
+  * Delivering high-performance, well-structured backend architectures.
+  * Quick bug-fixing and post-delivery technical support.
+  * Strictly adhering to requirements and deadlines.
+
+=== CONTACT INFO ===
+- Email: elbadrymoamen254@gmail.com
+- LinkedIn: https://www.linkedin.com/in/moamen-elbadry-174172340
+- Phone: +20 122 404 4624
+
+Always respond with a polite, confident, professional, and convincing tone to prospective clients.`;
+
+        // دالة للتحقق من لغة النص (عربي أم إنجليزي)
+        function isArabicText(text) {
+            const arabicRegex = /[\u0600-\u06FF]/;
+            return arabicRegex.test(text);
+        }
+
+        async function handleChatSubmit(e) {
+            if (e) e.preventDefault();
+            const inputEl = document.getElementById('chatInput');
+            const userMsg = inputEl.value.trim();
+            if (!userMsg) return;
+
+            appendChatMessage('user', userMsg);
+            inputEl.value = '';
+
+            const isArabic = isArabicText(userMsg);
+            const loadingText = isArabic ? 'جاري التفكير...' : 'Thinking...';
+            const loadingId = appendChatMessage('bot', loadingText);
+
+            try {
+                const apiKey = "AQ.Ab8RN6IQUvL7yHzFwyCrmP_I4cvn1DekskINz73iUHS5CbhjCA";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userMsg }] }],
+                    systemInstruction: { parts: [{ text: moamenResumeContext }] }
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+                    const botReply = data.candidates[0].content.parts[0].text;
+                    updateChatMessage(loadingId, botReply);
+                } else {
+                    console.error("API Response Details:", data);
+                    const fallbackReply = generateFallbackResponse(userMsg, isArabic);
+                    updateChatMessage(loadingId, fallbackReply);
+                }
+
+            } catch (err) {
+                console.error("Fetch Error:", err);
+                const fallbackReply = generateFallbackResponse(userMsg, isArabic);
+                updateChatMessage(loadingId, fallbackReply);
+            }
+        }
+
+        // دالة الإجابات الاحتياطية الذكية المزدوجة اللغات (تغطي المواعيد، المشاريع، والتقييمات)
+        // دالة الإجابات الاحتياطية الشاملة والمحدثة
+        function generateFallbackResponse(query, isArabic) {
+            const q = query.toLowerCase();
+
+            if (isArabic) {
+                // 1. تدريب DEPI
+                if (q.includes('depi') || q.includes('مبادرة') || q.includes('رواد') || q.includes('تدريب')) {
+                    return "مؤمن متدرب حالياً في **مبادرة رواد مصر الرقمية (DEPI)** في مسار **Full Stack .NET Developer**، حيث يعمل على بناء تطبيقات ويب متكاملة باستخدام أحدث تقنيات مايكروسوفت مثل ASP.NET Core و EF Core.";
+                }
+                // 2. المواعيد والالتزام
+                else if (q.includes('ميعاد') || q.includes('مواعيد') || q.includes('تسليم') || q.includes('وقت') || q.includes('التزام')) {
+                    return "نعم، مؤمن ملتزم تماماً بمواعيد التسليم (100% On-Time Delivery). يحرص على إرسال تحديثات دورية أثناء تطوير المشروع لضمان تسليم الكود في الوقت المحدد وبأعلى جودة.";
+                }
+                // 3. المشاريع والأعمال
+                else if (q.includes('مشروع') || q.includes('مشاريع') || q.includes('أعمال') || q.includes('سابقة')) {
+                    return "قام مؤمن بتقديم عدة مشاريع، أبرزها:\n• **E-Commerce REST API:** متجر إلكتروني متكامل بـ ASP.NET Core و Clean Architecture.\n• **Sohag AI Student Portal:** بوابة لتنظيم الأنشطة والمسابقات البرمجية.\n• **Task Manager & Contact Book:** تطبيقات إدارة البيانات باستعمال SQL Server.";
+                }
+                // 4. تقييم العملاء
+                else if (q.includes('تقييم') || q.includes('عملاء') || q.includes('رأي') || q.includes('عميل')) {
+                    return "يحظى مؤمن بتقييمات ممتازة من العملاء بفضل كفاءته وتواصله السريع والشفاف، واهتمامه بجودة وكتابة كود نظيف (Clean Code) والالتزام الصارم بالمتطلبات.";
+                }
+                // 5. Codeforces والبرمجة التنافسية (تم التعديل إلى 500+)
+                else if (q.includes('كود') || q.includes('مسأل') || q.includes('مسائل') || q.includes('حل') || q.includes('codeforces') || q.includes('problem') || q.includes('score')) {
+                    return "يمتلك مؤمن مهارات عالية في البرمجة التنافسية وحل المشكلات، حيث قام بحل أكثر من **500+ مسألة برمجية** على منصة **Codeforces** باستخدام لغة C++.";
+                }
+                // 6. المهارات والتقنيات
+                else if (q.includes('مهار') || q.includes('خبر') || q.includes('تقن') || q.includes('stack')) {
+                    return "مؤمن متخصص في تطوير الـ Backend وتطبيقات الويب باستخدام **.NET Core** و **C#** و **ASP.NET Core Web API** بالإضافة إلى **SQL Server** و **EF Core**.";
+                }
+                // 7. التكلفة والأسعار
+                else if (q.includes('سعر') || q.includes('تكلفة') || q.includes('ميزانية') || q.includes('تكلف') || q.includes('كم بيكلف')) {
+                    return "يتم تحديد سعر وتكلفة المشروع بناءً على نطاق العمل (Scope of Work)، التعقيد الفني، والميزات المطلوبة. يمكنك مشاركة التفاصيل عبر البريد لمعرفة تقدير دقيق للميزانية.";
+                }
+                // 8. طرق التواصل المتاحة
+                else if (q.includes('تواصل') || q.includes('أكلمه') || q.includes('واتس') || q.includes('رقم') || q.includes('إيميل') || q.includes('لينكد')) {
+                    return "يمكنك التواصل مع مؤمن مباشرة عبر:\n• البريد الإلكتروني: elbadrymoamen254@gmail.com\n• الهاتف / الواتساب: +20 122 404 4624\n• حساب LinkedIn: عبر الرابط الموجود في الموقع.";
+                }
+                // 9. الدعم الفني بعد التسليم
+                else if (q.includes('دعم') || q.includes('بعد التسليم') || q.includes('تعديل') || q.includes('صيانة') || q.includes('ضمان')) {
+                    return "يوفر مؤمن فترة دعم فني وصيانة مجانية بعد تسليم المشروع لإصلاح أي أخطاء ومساعدة العميل في رفع وتطبيق الكود بنجاح.";
+                }
+                // 10. التوافر وطبيعة العمل
+                else if (q.includes('متاح') || q.includes('شغل') || q.includes('فريلانس') || q.includes('عقد') || q.includes('وظيفة')) {
+                    return "نعم، مؤمن متاح للعمل الحر (Freelance) والتعاقدات عن بُعد، ويمكنه بدء العمل على مشروعك فور الاتفاق على التفاصيل والمتطلبات.";
+                }
+                // الرد العام في حال لم يتطابق أي شرط
+                else {
+                    return "مؤمن البدري هو طالب حاسبات وذكاء اصطناعي بجامعة سوهاج ومطور Full Stack .NET قام بحل أكثر من +500 مسألة على Codeforces. يمكنك التواصل معه عبر البريد: elbadrymoamen254@gmail.com أو عبر لينكد إن!";
+                }
+            } else {
+                // --- English Responses ---
+
+                // 1. DEPI Internship
+                if (q.includes('depi') || q.includes('intern') || q.includes('train')) {
+                    return "Moamen is currently a **Full Stack .NET Developer Trainee** at the **Digital Egypt Pioneers Initiative (DEPI)**, where he works on building full-stack web applications using .NET Core and SQL Server.";
+                }
+                // 2. Codeforces & Problem Solving (Updated to 500+)
+                else if (q.includes('codeforce') || q.includes('problem') || q.includes('score') || q.includes('solving') || q.includes('competitive')) {
+                    return "Moamen has strong problem-solving skills, having solved **500+ algorithmic problems** on **Codeforces** using C++.";
+                }
+                // 3. Deadlines & Punctuality
+                else if (q.includes('deadline') || q.includes('time') || q.includes('punctual') || q.includes('schedule')) {
+                    return "Yes, Moamen is strictly committed to project deadlines (100% On-time Delivery). He provides transparent milestone updates to ensure seamless project delivery.";
+                }
+                // 4. Projects Portfolio
+                else if (q.includes('project') || q.includes('portfolio') || q.includes('built') || q.includes('work')) {
+                    return "Moamen has built several robust projects, including:\n• **E-Commerce REST API:** Scalable backend built with ASP.NET Core & Clean Architecture.\n• **Sohag AI Student Portal:** Web portal for managing academic events and programming contests.\n• **Task & Contact Management Systems:** Enterprise applications using SQL Server & EF Core.";
+                }
+                // 5. Client Reviews
+                else if (q.includes('rating') || q.includes('review') || q.includes('client') || q.includes('feedback')) {
+                    return "Clients evaluate Moamen highly for his technical excellence, clean code, transparent communication, and consistent support.";
+                }
+                // 6. Technical Skills
+                else if (q.includes('skill') || q.includes('tech') || q.includes('stack')) {
+                    return "Moamen specializes in Backend and Web Development using **.NET Core**, **C#**, **ASP.NET Core Web API**, **SQL Server**, and **EF Core**.";
+                }
+                // 7. Pricing / Budget
+                else if (q.includes('price') || q.includes('cost') || q.includes('budget') || q.includes('rate') || q.includes('charge')) {
+                    return "Project costs depend on the required features, complexity, and scope of work. You can send your project details via email for a precise cost and time estimate.";
+                }
+                // 8. Contact Methods
+                else if (q.includes('contact') || q.includes('reach') || q.includes('email') || q.includes('phone') || q.includes('whatsapp')) {
+                    return "You can reach Moamen directly via:\n• Email: elbadrymoamen254@gmail.com\n• Phone / WhatsApp: +20 122 404 4624\n• LinkedIn: Available on the website link.";
+                }
+                // 9. Post-Delivery Support
+                else if (q.includes('support') || q.includes('maintenance') || q.includes('warranty') || q.includes('bug')) {
+                    return "Yes, Moamen provides free post-delivery technical support to ensure your application runs smoothly and any issues are promptly resolved.";
+                }
+                // 10. Availability / Freelance
+                else if (q.includes('available') || q.includes('freelance') || q.includes('hire') || q.includes('remote')) {
+                    return "Yes, Moamen is currently available for freelance projects and remote contract opportunities. Feel free to reach out with your project details!";
+                }
+                // Default General Reply
+                else {
+                    return "Moamen Elbadry is a CS & AI student at Sohag University and a skilled Full Stack .NET Developer with 500+ solved problems on Codeforces. Feel free to contact him via email: elbadrymoamen254@gmail.com or via LinkedIn!";
+                }
+            }
+        }
+        function sendQuickPrompt(promptText) {
+            document.getElementById('chatInput').value = promptText;
+            handleChatSubmit();
+        }
+
+        let msgCounter = 0;
+        function appendChatMessage(sender, text) {
+            msgCounter++;
+            const msgId = `msg-${msgCounter}`;
+            const chatLog = document.getElementById('chatMessages');
+
+            const wrapper = document.createElement('div');
+            wrapper.className = `flex items-start gap-3 ${sender === 'user' ? 'justify-end' : ''}`;
+
+            if (sender === 'bot') {
+                wrapper.innerHTML = `
+            <div class="w-7 h-7 rounded-full bg-dotnet-600/30 text-dotnet-400 flex items-center justify-center text-xs flex-shrink-0">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+            <div id="${msgId}" class="bg-gray-800/80 p-3.5 rounded-2xl rounded-tl-none border border-gray-700/60 max-w-[85%] text-gray-200 text-xs sm:text-sm leading-relaxed">
+                ${text}
+            </div>
+        `;
+            } else {
+                wrapper.innerHTML = `
+            <div class="bg-dotnet-600 text-white p-3.5 rounded-2xl rounded-tr-none max-w-[85%] text-xs sm:text-sm">
+                ${text}
+            </div>
+        `;
+            }
+
+            chatLog.appendChild(wrapper);
+            chatLog.scrollTop = chatLog.scrollHeight;
+            return msgId;
+        }
+
+        function updateChatMessage(msgId, newText) {
+            const el = document.getElementById(msgId);
+            if (el) {
+                const formattedText = newText
+                    .replace(/\n/g, '<br>')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                el.innerHTML = formattedText;
+            }
+        }
+
+        // Initialize App
+        window.onload = function () {
+            typeEffect();
+            loadSavedPhoto();
+        };
+    </script>
+</body>
+
+</html>

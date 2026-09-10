@@ -1,0 +1,74 @@
+.-test1 {
+    color: rgb(233, 11, 11);
+}
+.-test2 {
+    color: rgb(35, 9, 237);
+} 
+
+ div {
+
+  background-color: rgb(217, 193, 193);
+  background-image: url("OIP.jpg");
+  background-repeat: no-repeat; 
+
+  background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+  background-position: 100px 100px;
+  background-position: 100% 50%;
+  background-position: left top;
+  background-size: cover;
+  background-size: contain;
+
+/* Padding--> top,right,bottom,left (top=bottom) , (right=left) */
+ padding-left: 10px;
+  
+  margin: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin: -30px;  margin take a negative value but the padding not take a negative value */
+
+  border: 3px dashed rgb(29, 156, 202);/* == border-width: 3px ; border-color:green; border-style: solid;
+  outline: 5px solid red;
+   */
+
+display: block;
+margin:10px;
+padding: 15px;
+background-color: blueviolet; 
+}
+
+ p {
+    color: #ff0000;
+}
+
+.a {
+
+
+     display: inline;
+    padding:10px;
+    margin: 15px;
+    width: 500px;
+    height: 200px;
+    background-color: rgb(14, 204, 122); 
+  }
+  .b {
+     display: inline-block;
+    padding:10px;
+    margin: 15px;
+    width: 500px;
+    height: 200px;
+    background-color: burlywood; 
+  }
+
+.first {
+    /* display: none;  */
+    visibility: hidden;
+    background-color: chartreuse;
+}
+.second {
+  /* visibility: hidden; */
+  background-color: blueviolet;
+}
+

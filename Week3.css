@@ -1,0 +1,138 @@
+/* inheritance subject */
+/* body {
+    font-family: 'Courier New', Courier, monospace;
+}
+div {
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    background-color: #eee;
+    font-size: 20px;
+    border: 2px solid red;
+
+}
+div p {
+    border: 2px solid ;
+    border-color: inherit;
+    padding: inherit;
+
+} */
+
+/* .Parent {
+    background-color: #0e5edfbd;
+    padding: 10px;
+} 
+
+.Parent div {
+    background-color: #eee;
+    text-align: center;
+    padding-bottom:10px;
+    padding-top: 10px;
+    width: 25%;
+    float: left;
+    
+}
+.Clear {
+    clear: both;
+} */
+/* body {
+    margin: 0;
+}
+div {
+    background-color: #e90b0b;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    float: left;
+    margin-left:15px;
+    width: calc((100%-90px)/5);
+    /* opacity: 0.5; خاص بشفافيه المحتوي كاملا 
+} */
+/* 
+   100% 
+   6spaces 6*10=60px
+   avalible =100%-60px
+   5 elements=(100%-60px)/5
+*/
+/* .one {
+    background-color: red;
+    /* position: relative;
+    bottom: 50px; */
+    /* position: absolute;
+    bottom: 0; */
+    /* position: fixed;
+    bottom: 0; 
+    }
+    .two {
+        background-color: green;
+        
+        }
+        .parent {
+            width: 500px;
+            height: 300px;
+            background-color: rgb(134, 11, 206);
+            position: relative;
+            } */
+      
+ /* body {
+     min-height: 5000px;
+}
+
+div {
+    background-color: rgb(233, 9, 9);
+    color: white;
+    padding: 10px;
+    position: sticky;
+    bottom: 5px;
+}  */
+/* example for z-index */
+
+/* .one {
+
+    background-color: black;
+    color: white;
+    z-index: 3;
+    top: 10px;
+    left: 10px;
+
+}
+.two {
+    background-color: red;
+    color: black;
+    z-index: 2;
+    top: 20px;
+    left: 20px;
+}
+.three {
+    background-color: green;
+    color: darkorange;
+    z-index: 1;
+    top: 30px;
+    left: 30px;
+}
+
+.four {
+    background-color: blue;
+    color: gray;
+    z-index: -1;
+    top: 40px;
+    left: 40px;
+} */
+
+/* div {
+    background-color: #eee;
+    padding: 20px;
+    width: 150px;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+}  */
+
+div{
+    list-style-type: style type;
+    list-style-image: url();
+    list-style:none; 
+
+}
+
+
